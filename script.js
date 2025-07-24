@@ -71,6 +71,7 @@ function createEquations() {
   console.log('equations array:', equationsArray);
 }
 
+
 // Dynamically adding correct/incorrect equations
 // function populateGamePage() {
 //   // Reset DOM, Set Blank Space Above
