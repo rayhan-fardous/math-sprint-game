@@ -42,7 +42,11 @@ let valueY =0;
 
 // Stop Timer, Process Results, go to Score page
 function checkTime() {
-  
+  console.log(timePlayed);
+  if (playerGuessArray.length == questionAmount) {
+  console.log('player guessed:' , playerGuessArray);
+    clearInterval(timer);
+  }
 }
 
 // Add a tenth of a second to timePlayed
@@ -63,7 +67,6 @@ function startTimer() {
 
 // Scroll, Store user selection in playerGuessArray
 function select(guessedTrue) {
-  console.log('player guessed:' , playerGuessArray);
   // scroll 80 pixels
   valueY += 80;
   itemContainer.scroll(0, valueY);
