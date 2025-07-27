@@ -40,12 +40,25 @@ let finalTimeDisplay = '0.0s';
 // Scroll
 let valueY =0;
 
+// Stop Timer, Process Results, go to Score page
+function checkTime() {
+  
+}
+
+// Add a tenth of a second to timePlayed
+function addTime() {
+  timePlayed += 0.1;
+  checkTime();
+}
+
 // Start timer when the game page is clicked
 function startTimer() {
   //Reset times
   timePlayed = 0;
   penaltyTime = 0;
   finalTime = 0;
+  timer = setInterval(addTime, 100);
+  gamePage.removeEventListener('click', startTimer);
 }
 
 // Scroll, Store user selection in playerGuessArray
@@ -198,4 +211,4 @@ startForm.addEventListener("click", () => {
 
 // Event Listeners
 startForm.addEventListener("submit", selectQuestionAmount);
-gamePage.addEventListener('click', startTimer);
+gamePage.addEventListener('click', startTimer); 
